@@ -8,15 +8,15 @@ import (
 
 func main() {
 	// Create a new Gin router
-	r := gin.Default()
+	router := gin.Default()
 
 	// Define a "Hello World" endpoint
-	r.GET("/hello", func(c *gin.Context) {
+	router.GET("/hello", func(c *gin.Context) {
 		c.String(http.StatusOK, "World")
 	})
 
 	// Start the server
-	if err := r.Run(); err != nil {
+	if err := router.Run(":8080"); err != nil {
 		panic(err)
 	}
 }

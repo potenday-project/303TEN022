@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import MyTaste from "./pages/MyTaste/MyTaste";
+import MyTasteNight from "./pages/MyTaste/MyTasteNight";
+import Detail from "./pages/Detail/Detail";
+import Loading from "./pages/Loading/Loading";
+import HomeNight from "./pages/Home/HomeNight";
+import DetailNight from "./pages/Detail/DetailNight";
+import LoadingNight from "./pages/Loading/LoadingNight";
+import Popup from "./pages/Popup/Popup";
+import PopupNight from "./pages/Popup/PopupNight";
 
 function App() {
+  const today = new Date();
+  const hour = today.getHours();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      {hour >= 6 && hour < 18 ? (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mytaste" element={<MyTaste />} />
+          <Route path="/loading" element={<Loading />} />
+          <Route path="/description" element={<Detail />} />
+          <Route path="/popup" element={<PopupNight />} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route path="/" element={<HomeNight />} />
+          <Route path="/mytaste" element={<MyTasteNight />} />
+          <Route path="/loading" element={<LoadingNight />} />
+          <Route path="/detail" element={<DetailNight />} />
+          <Route path="/popup" element={<Popup />} />
+        </Routes>
+      )}
+    </BrowserRouter>
   );
 }
 

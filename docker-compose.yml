@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+    go-server:
+        container_name: "303TEN022-server"
+        build: ./server
+        ports:
+            - "8080:8080"

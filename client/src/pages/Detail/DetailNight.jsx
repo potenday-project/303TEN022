@@ -1,40 +1,37 @@
-import React from "react";
-import { DescDivNight, ImgDivNight, ShareDivNight } from "./DetailStyle";
-import DALLE1 from "../../images/DALLE1.png";
-// import Instagram from "../../images/instagram.png";
-// import Kakao from "../../images/kakao.png";
-// import Twitter from "../../images/twitter.png";
-// import Share from "../../images/share.png";
-// import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { DescDivNight, ImgDivNight } from "./DetailStyle";
+import { useLocation } from "react-router-dom";
 
 const DetailNight = () => {
-  // const navigator = useNavigate();
+  const location = useLocation();
+  const { tastePick } = location.state;
+  const [imageUrl, setImageUrl] = useState(null);
 
-  // const onClickShowPopup = () => {
-  //   navigator("/popup");
-  // };
+  // Use the tastePick data here
+  console.log("in detail: ", tastePick.join(" "));
+
+  useEffect(() => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: tastePick.join(" ") }),
+    };
+
+    fetch("http://localhost:8000/dalle", requestOptions)
+      .then((response) => response.json())
+      .then((data) => setImageUrl(data))
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <DescDivNight>
-      <h1>IT기업 감성 UX라이터</h1>
-      <ImgDivNight>
-        <img id="createdImg" src={DALLE1} alt="DALLE" />
-      </ImgDivNight>
-      {/* <p id="desc">
-        ipsum lorem ipsum loremipsum loremipsum loremipsum loremipsum loremipsum
-        loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum
-        loremipsum loremipsum loremipsum lorem loremipsum loremlorem ipsum
-        loremlorem i
-      </p>
+      <h1>당신의 성향에 맞는 캐릭터는?</h1>
 
-      <button onClick={onClickShowPopup}>전체 유형 보기</button>
-
-      <ShareDivNight>
-        <img src={Instagram} alt="Instagram" />
-        <img src={Kakao} alt="Kakao" />
-        <img src={Twitter} alt="Twitter" />
-        <img src={Share} alt="Share" />
-      </ShareDivNight> */}
+      {imageUrl && (
+        <ImgDivNight>
+          <img id="createdImg" src={imageUrl} alt="DALLE" />
+        </ImgDivNight>
+      )}
     </DescDivNight>
   );
 };

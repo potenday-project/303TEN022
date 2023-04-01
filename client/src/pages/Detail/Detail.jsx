@@ -12,18 +12,16 @@ const Detail = () => {
 
   useEffect(() => {
     const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt: tastePick.join(" ") })
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: tastePick.join(" ") }),
     };
-    
-    fetch("http://localhost:8000/test", requestOptions)
-      .then(response => response.json())
-      .then(data => setImageUrl(data))
-      .catch(error => console.log(error));
+
+    fetch("http://localhost:8000/dalle", requestOptions)
+      .then((response) => response.json())
+      .then((data) => setImageUrl(data))
+      .catch((error) => console.log(error));
   }, []);
-  
-  
 
   return (
     <DescDiv>
@@ -36,6 +34,5 @@ const Detail = () => {
     </DescDiv>
   );
 };
-
 
 export default Detail;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   TasteDivNight,
@@ -8,7 +8,13 @@ import {
 
 const MyTasteNight = () => {
   const [data, setData] = useState("");
-  const [tastePick, setTastePick] = useState(["3D", "render", "that", "is"]);
+  const [tastePick, setTastePick] = useState([
+    "3D",
+    "render",
+    "character",
+    "that",
+    "is",
+  ]);
   const [click, setClick] = useState(false);
   const navigate = useNavigate();
 
@@ -29,16 +35,16 @@ const MyTasteNight = () => {
   const onClickBtn = (e) => {
     const value = e.target.value;
 
-    tastePick.length <= 8
+    tastePick.length <= 9
       ? setTastePick([value, ...tastePick])
       : alert("5개 이상을 고를 수 없습니다!");
     setClick(!click);
   };
-  console.log(tastePick);
+  console.log("in taste:", tastePick);
 
   const onSubmitTaste = async (e) => {
     e.preventDefault();
-    navigate("/detail");
+    navigate("/detail", { state: { tastePick } });
   };
 
   return (

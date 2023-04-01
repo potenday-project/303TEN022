@@ -45,6 +45,7 @@ func main() {
 		}
 
 		// Create the request to the DALL-E API
+		request.Size = 256 // Set the image size to 256x256
 		apiUrl := "https://api.openai.com/v1/images/generations"
 		data := gin.H{
 			"model":           "image-alpha-001",

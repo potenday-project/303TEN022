@@ -1,6 +1,5 @@
 import React from "react";
 import { LoadingNightDiv } from "./LoadingStyle";
-
 import Analsis from "../../images/Analsis....png";
 import SyncLoader from "react-spinners/SyncLoader";
 
@@ -9,12 +8,9 @@ const LoadingNight = () => {
     <LoadingNightDiv>
       <h1>분석중</h1>
       <div id="loadingMain">
-        {/* <div id="img">
-          <img id="loadingImg" src={DALLE1} alt="dalle1" />
-        </div> */}
         <img id="analsis" src={Analsis} alt="Analsis" />
+        <SyncLoader color="#85fff8" />
       </div>
-      <SyncLoader color="#FF94D1" />
     </LoadingNightDiv>
   );
 };

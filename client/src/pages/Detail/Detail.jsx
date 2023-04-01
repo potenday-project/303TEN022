@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { DescDiv, ImgDiv } from "./DetailStyle";
 import { useLocation } from "react-router-dom";
+import Loading from "../Loading/Loading";
 
 const Detail = () => {
+  const [loading, setLoading] = useState(false);
   const location = useLocation();
   const { tastePick } = location.state;
   const [imageUrl, setImageUrl] = useState(null);
@@ -17,21 +19,29 @@ const Detail = () => {
       body: JSON.stringify({ prompt: tastePick.join(" ") }),
     };
 
-    fetch("http://localhost:8000/dalle", requestOptions)
+    const postData = fetch("http://localhost:8000/dalle", requestOptions)
       .then((response) => response.json())
       .then((data) => setImageUrl(data))
       .catch((error) => console.log(error));
+
+    if (postData) {
+      setLoading(!loading);
+    }
   }, []);
 
   return (
-    <DescDiv>
-      <h1>IT기업 감성 UX라이터</h1>
-      {imageUrl && (
-        <ImgDiv>
-          <img id="createdImg" src={imageUrl} alt="DALLE" />
-        </ImgDiv>
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <DescDiv>
+          <h1>당신의 성향에 맞는 캐릭터는?</h1>
+          <ImgDiv>
+            <img id="createdImg" src={imageUrl} alt="DALLE" />
+          </ImgDiv>
+        </DescDiv>
       )}
-    </DescDiv>
+    </>
   );
 };
 

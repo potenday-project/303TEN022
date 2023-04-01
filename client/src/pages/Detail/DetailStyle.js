@@ -9,7 +9,12 @@ export const DescDiv = styled.div`
 
   margin: 30px auto;
 
-  background: #ff94d199;
+  /* background: #ff94d199; */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 148, 209, 0.9) 0%,
+    rgba(255, 245, 0, 0.42) 100%
+  );
 
   display: flex;
   flex-direction: column;

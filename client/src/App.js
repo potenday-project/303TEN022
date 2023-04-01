@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
@@ -20,11 +21,11 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={hour >= 6 && hour < 18 ? <HomeNight /> : <Home />}
+          element={hour >= 6 && hour < 18 ? <Home /> : <HomeNight />}
         />
         <Route
           path="/mytaste"
-          element={hour >= 6 && hour < 18 ? <MyTasteNight /> : <MyTaste />}
+          element={hour >= 6 && hour < 18 ? <MyTaste /> : <MyTasteNight />}
         />
         <Route
           path="/loading"
@@ -32,7 +33,7 @@ function App() {
         />
         <Route
           path="/detail"
-          element={hour >= 6 && hour < 18 ? <DetailNight /> : <Detail />}
+          element={hour >= 6 && hour < 18 ? <Detail /> : <DetailNight />}
         />
         <Route
           path="/popup"

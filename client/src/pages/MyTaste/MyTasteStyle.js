@@ -153,7 +153,7 @@ export const TasteBodyNight = styled.div`
     background-color: transparent;
 
     border-radius: 30px;
-    border: 3px solid #85fff8;
+    border: 1px solid #85fff8;
 
     cursor: pointer;
 
@@ -162,7 +162,7 @@ export const TasteBodyNight = styled.div`
     :hover {
       background: linear-gradient(180deg, #c70180 0%, #5101ec 100%);
       color: #fff;
-      border: 3px solid #85fff8;
+      border: 1px solid #85fff8;
     }
   }
 `;
@@ -179,6 +179,14 @@ export const CompleteBtnNight = styled.input`
   color: #fff;
 
   background: transparent;
+
+  :focus,
+  :active,
+  :hover {
+    background: linear-gradient(180deg, #c70180 0%, #5101ec 100%);
+    color: #fff;
+    border: 1px solid #85fff8;
+  }
 
   cursor: pointer;
 `;

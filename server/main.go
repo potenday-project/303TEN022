@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"image"
 	"image/png"
+	"log"
 	"net/http"
 	"strings"
 
@@ -43,6 +44,9 @@ func main() {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 			return
 		}
+
+		// Log the request data
+		log.Printf("Received DALL-E request: %+v", request)
 
 		// Create the request to the DALL-E API
 		request.Size = 256 // Set the image size to 256x256

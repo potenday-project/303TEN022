@@ -3,23 +3,23 @@ import { useNavigate } from "react-router-dom";
 import { TasteDiv, TasteBody, CompleteBtn } from "./MyTasteStyle";
 
 const MyTaste = () => {
-  const [tastePick, setTastePick] = useState([]);
+  const [tastePick, setTastePick] = useState(["3D", "render", "that", "is"]);
   const [click, setClick] = useState(false);
   const navigate = useNavigate();
 
   const onClickBtn = (e) => {
     const value = e.target.value;
 
-    tastePick.length <= 4
-      ? setTastePick([value, ...tastePick])
+    tastePick.length <= 8
+      ? setTastePick([...tastePick, value])
       : alert("5개 이상을 고를 수 없습니다!");
     setClick(!click);
   };
-  console.log(tastePick);
+  console.log("in taste:",tastePick);
 
   const onSubmitTaste = async (e) => {
     e.preventDefault();
-    navigate("/description");
+    navigate("/detail", { state: { tastePick } });
   };
 
   return (

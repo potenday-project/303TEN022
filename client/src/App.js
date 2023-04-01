@@ -19,19 +19,19 @@ function App() {
     <BrowserRouter>
       {hour >= 6 && hour < 18 ? (
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/mytaste" element={<MyTaste />} />
+          <Route path="/" element={<HomeNight />} />
+          <Route path="/mytaste" element={<MyTasteNight />} />
           <Route path="/loading" element={<Loading />} />
-          <Route path="/description" element={<Detail />} />
-          <Route path="/popup" element={<PopupNight />} />
+          <Route path="/detail" element={<DetailNight />} />
+          <Route path="/popup" element={<Popup />} />
         </Routes>
       ) : (
         <Routes>
-          <Route path="/" element={<HomeNight />} />
-          <Route path="/mytaste" element={<MyTasteNight />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/mytaste" element={<MyTaste />} />
           <Route path="/loading" element={<LoadingNight />} />
-          <Route path="/detail" element={<DetailNight />} />
-          <Route path="/popup" element={<Popup />} />
+          <Route path="/detail" element={<Detail />} />
+          <Route path="/popup" element={<PopupNight />} />
         </Routes>
       )}
     </BrowserRouter>

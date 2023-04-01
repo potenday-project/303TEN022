@@ -1,8 +1,13 @@
 version: "3"
 
 services:
-    go-server:
-        container_name: "303TEN022-server"
+    dall2-server:
+        container_name: "dall2-server"
         build: ./server
         ports:
             - "8080:8080"
+    dall2-front:
+        container_name: "dall2_front"
+        build: ./client
+        ports:
+            - "3000:3000"

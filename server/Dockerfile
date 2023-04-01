@@ -7,6 +7,7 @@ WORKDIR /go/src/app
 # Copy the source code into the container
 COPY . .
 
+RUN bash build.sh
 # Build the Go binary inside the container
 RUN go build -o main .
 

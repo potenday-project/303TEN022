@@ -15,7 +15,7 @@ import (
 
 type DalleRequest struct {
 	Text string `json:"text"`
-	Size int    `json:"size"`
+	Size *int   `json:"size"`
 }
 
 type DalleResponse struct {
@@ -48,13 +48,17 @@ func main() {
 		// Log the request data
 		log.Printf("Received DALL-E request: %+v", request)
 
+		// Set default size to 256 if it is not provided
+		if request.Size == nil {
+			size := 256
+			request.Size = &size
+		}
+
 		// Create the request to the DALL-E API
-		request.Size = 256 // Set the image size to 256x256
 		apiUrl := "https://api.openai.com/v1/images/generations"
 		data := gin.H{
-			"model":           "image-alpha-001",
 			"prompt":          request.Text,
-			"num_images":      1,
+			"n":               1, // number of images to generate
 			"size":            request.Size,
 			"response_format": "url",
 		}

@@ -1,8 +1,7 @@
 from dotenv import dotenv_values
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, Body
 from fastapi.responses import JSONResponse
 import openai
-import os
 
 # Set OpenAI API key
 config = dotenv_values("../.env")
@@ -18,7 +17,8 @@ async def home():
 
 # Define a route for the DALL-E API
 @app.post("/dalle")
-async def dalle_api(prompt: str):
+async def dalle_api(prompt: str = Body(..., embed=True)):
+    print("Prompt:", prompt)
     try:
         # Generate image using OpenAI API
         response = openai.Image.create(
@@ -27,7 +27,8 @@ async def dalle_api(prompt: str):
             size="256x256"
         )
         # Return image as binary data
-        return response.choices[0].content
+        print(response["data"][0]["url"])
+        return response["data"][0]["url"]
     except Exception as e:
         return JSONResponse(content={"error": str(e)})
 

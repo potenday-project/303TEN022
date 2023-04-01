@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { TasteDiv, TasteBody, CompleteBtn } from "./MyTasteStyle";
 
@@ -14,17 +14,19 @@ const MyTaste = () => {
   const [click, setClick] = useState(false);
   const navigate = useNavigate();
 
-  const getData = async () => {
-    try {
-      const fetchData = await fetch("http://localhost:8000/hello").then((res) =>
-        res.json()
-      );
-      setData(fetchData);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  getData();
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const fetchData = await fetch("http://localhost:8000/hello").then((res) =>
+          res.json()
+        );
+        setData(fetchData);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getData();
+  }, []);
 
   console.log(data);
 

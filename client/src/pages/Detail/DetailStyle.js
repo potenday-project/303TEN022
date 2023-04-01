@@ -9,13 +9,7 @@ export const DescDiv = styled.div`
 
   margin: 30px auto;
 
-  background: linear-gradient(
-    180deg,
-    rgba(255, 148, 209, 0.9) 0%,
-    rgba(255, 245, 0, 0.42) 100%
-  );
-
-  /* background: #ff94d199; */
+  background: #ff94d199;
 
   display: flex;
   flex-direction: column;
@@ -25,13 +19,15 @@ export const DescDiv = styled.div`
   h1 {
     margin-top: 40px;
     margin-bottom: 20px;
+
+    color: #1d4489;
   }
 
   #createdImg {
     width: 316px;
     height: 316px;
 
-    border: 1px solid #000;
+    border: 3px solid #1d4489;
   }
 
   #desc {
@@ -54,6 +50,8 @@ export const DescDiv = styled.div`
     background-color: #fea1d2;
 
     margin-bottom: 26px;
+
+    cursor: pointer;
   }
 
   #shareText {
@@ -68,6 +66,10 @@ export const ShareDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
+
+  img {
+    cursor: pointer;
+  }
 `;
 
 export const ImgDiv = styled.div`
@@ -79,8 +81,6 @@ export const ImgDiv = styled.div`
 
   width: 310px;
   height: 310px;
-
-  background: linear-gradient(135deg, #85fff8 0%, #cf0076 64.58%);
 `;
 
 // night style
@@ -132,6 +132,8 @@ export const DescDivNight = styled.div`
     color: #fff;
 
     margin-bottom: 40px;
+
+    cursor: pointer;
   }
 `;
 

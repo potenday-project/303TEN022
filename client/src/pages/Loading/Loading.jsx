@@ -9,9 +9,9 @@ const Loading = () => {
       <h1>분석중</h1>
       <div id="loadingMain">
         {/* <SyncLoader color="#FF94D1" /> */}
-        <div id="img">
+        {/* <div id="img">
           <img src={DALLE1} alt="dalle1" />
-        </div>
+        </div> */}
       </div>
     </LoadingDiv>
   );

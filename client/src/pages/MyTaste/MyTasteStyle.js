@@ -21,12 +21,14 @@ export const TasteDiv = styled.div`
 
   h1 {
     font-size: 40px;
+    color: #1d4489;
   }
 
   p {
     font-size: 15px;
     margin-top: 6px;
     margin-bottom: 61px;
+    color: #1d4489;
   }
 `;
 
@@ -52,6 +54,7 @@ export const TasteBody = styled.div`
     margin-bottom: 10px;
     margin-right: 5px;
 
+    color: #1d4489;
     font-size: 18px;
 
     border-radius: 30px;
@@ -62,10 +65,9 @@ export const TasteBody = styled.div`
 
     :focus,
     :active,
-    :hover,
-    ::after {
+    :hover {
       background-color: #ff94d1;
-      color: #000;
+      color: #1d4489;
       border: 1px solid #000;
     }
   }
@@ -80,10 +82,19 @@ export const CompleteBtn = styled.input`
   border-radius: 50px;
   border: 1px solid #f7008d;
   font-size: 18px;
+  color: #1d4489;
 
   background-color: #fff;
 
   cursor: pointer;
+
+  :focus,
+  :active,
+  :hover {
+    background-color: #ff94d1;
+    color: #1d4489;
+    border: 1px solid #000;
+  }
 `;
 
 // night version styled-components
@@ -148,8 +159,7 @@ export const TasteBodyNight = styled.div`
 
     :focus,
     :active,
-    :hover,
-    ::after {
+    :hover {
       background: linear-gradient(180deg, #c70180 0%, #5101ec 100%);
       color: #fff;
       border: 3px solid #85fff8;

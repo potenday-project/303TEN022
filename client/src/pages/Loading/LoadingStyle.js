@@ -19,26 +19,19 @@ export const LoadingDiv = styled.div`
   gap: 50px;
 
   h1 {
-    /* position: absolute; */
     font-size: 40px;
     font-weight: 900;
 
-    margin-bottom: 153px;
+    margin-bottom: 20px;
   }
 
   #loadingMain {
-    /* position: absolute; */
-    /* z-index: 6; */
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     #img {
-      position: absolute;
-      z-index: 3;
-
       width: 340px;
       height: 340px;
 
@@ -53,15 +46,15 @@ export const LoadingDiv = styled.div`
         width: 316px;
         height: 316px;
 
+        animation: 180deg 6s linear infinite;
+
         border: 1px solid #000;
       }
 
-      margin-bottom: 250px;
+      margin-bottom: 0px;
     }
 
     span {
-      position: relative;
-      z-index: 4;
       width: 100px;
 
       margin-bottom: 250px;
@@ -80,7 +73,8 @@ export const LoadingDiv = styled.div`
   box-shadow: 0px -1px 15px -1px rgba(0, 0, 0, 0.13);
 `;
 
-// night style
+// night styles
+
 export const LoadingNightDiv = styled.div`
   box-sizing: border-box;
   font-family: "Noto Sans";
@@ -90,7 +84,8 @@ export const LoadingNightDiv = styled.div`
 
   margin: 30px auto;
 
-  background: #ff94d199;
+  background-color: #000;
+  color: #fff;
 
   display: flex;
   flex-direction: column;
@@ -100,44 +95,46 @@ export const LoadingNightDiv = styled.div`
   gap: 50px;
 
   h1 {
-    /* position: absolute; */
+    position: absolute;
+    z-index: 6;
     font-size: 40px;
     font-weight: 900;
 
-    margin-bottom: 153px;
+    margin-bottom: 0px;
   }
 
   #loadingMain {
-    /* position: absolute; */
-    /* z-index: 6; */
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     #img {
-      position: absolute;
-      z-index: 3;
+      /* position: absolute;
+      z-index: 3; */
 
-      width: 340px;
-      height: 340px;
+      width: 326px;
+      height: 326px;
 
-      background-color: #fff;
-      border: 1px solid #000;
+      background: linear-gradient(135deg, #85fff8 0%, #cf0076 64.58%);
 
       display: flex;
       justify-content: center;
       align-items: center;
 
-      img {
+      #loadingImg {
         width: 316px;
         height: 316px;
 
-        border: 1px solid #000;
+        animation: 180deg 6s linear infinite;
       }
 
-      margin-bottom: 250px;
+      margin-bottom: 0px;
+    }
+
+    #analsis {
+      /* margin-top: 320px; */
+      margin-left: 280px;
     }
 
     span {

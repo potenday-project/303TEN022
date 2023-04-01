@@ -37,6 +37,7 @@ export const MainDiv = styled.div`
     font-size: 20px;
 
     background-color: #ff94d1;
+    color: #1d4489;
 
     cursor: pointer;
   }

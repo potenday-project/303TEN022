@@ -8,13 +8,13 @@ import {
 
 const MyTasteNight = () => {
   const [data, setData] = useState("");
-  const [tastePick, setTastePick] = useState([]);
+  const [tastePick, setTastePick] = useState(["3D", "render", "that", "is"]);
   const [click, setClick] = useState(false);
   const navigate = useNavigate();
 
   const getData = async () => {
     try {
-      const fetchData = await fetch("http://0.0.0.0:8080").then((res) =>
+      const fetchData = await fetch("http://localhost:8080/hello").then((res) =>
         res.json()
       );
       setData(fetchData);
@@ -29,7 +29,7 @@ const MyTasteNight = () => {
   const onClickBtn = (e) => {
     const value = e.target.value;
 
-    tastePick.length <= 4
+    tastePick.length <= 8
       ? setTastePick([value, ...tastePick])
       : alert("5개 이상을 고를 수 없습니다!");
     setClick(!click);
@@ -38,7 +38,7 @@ const MyTasteNight = () => {
 
   const onSubmitTaste = async (e) => {
     e.preventDefault();
-    navigate("/description");
+    navigate("/detail");
   };
 
   return (

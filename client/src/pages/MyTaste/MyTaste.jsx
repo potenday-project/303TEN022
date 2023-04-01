@@ -3,15 +3,30 @@ import { useNavigate } from "react-router-dom";
 import { TasteDiv, TasteBody, CompleteBtn } from "./MyTasteStyle";
 
 const MyTaste = () => {
-  const [tastePick, setTastePick] = useState([]);
+  const [data, setData] = useState("");
+  const [tastePick, setTastePick] = useState(["3D", "render", "that", "is"]);
   const [click, setClick] = useState(false);
   const navigate = useNavigate();
+
+  const getData = async () => {
+    try {
+      const fetchData = await fetch("http://localhost:8080/hello").then((res) =>
+        res.json()
+      );
+      setData(fetchData);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  getData();
+
+  console.log(data);
 
   const onClickBtn = (e) => {
     const value = e.target.value;
 
-    tastePick.length <= 4
-      ? setTastePick([value, ...tastePick])
+    tastePick.length <= 8
+      ? setTastePick([...tastePick, value])
       : alert("5개 이상을 고를 수 없습니다!");
     setClick(!click);
   };
@@ -19,7 +34,7 @@ const MyTaste = () => {
 
   const onSubmitTaste = async (e) => {
     e.preventDefault();
-    navigate("/description");
+    navigate("/detail");
   };
 
   return (

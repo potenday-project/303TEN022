@@ -1,6 +1,7 @@
 from dotenv import dotenv_values
 from fastapi import FastAPI, Body
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import openai
 import time
 
@@ -10,6 +11,15 @@ openai.api_key = config["OPENAI_API_KEY"]
 
 # Create FastAPI app
 app = FastAPI()
+
+# Set up CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Define a home route
 @app.get("/")

@@ -6,7 +6,7 @@ import openai
 import time
 
 # Set OpenAI API key
-config = dotenv_values("../.env")
+config = dotenv_values(".env")
 openai.api_key = config["OPENAI_API_KEY"]
 
 # Create FastAPI app

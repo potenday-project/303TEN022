@@ -10,9 +10,6 @@ COPY . .
 # Install dependencies
 RUN npm install
 
-# Build the application
-RUN npm run build
-
 # Expose port 3000 for the app to listen on
 EXPOSE 3000
 

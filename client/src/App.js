@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import MyTaste from "./pages/MyTaste/MyTaste";

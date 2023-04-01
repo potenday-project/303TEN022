@@ -5,9 +5,9 @@ services:
         container_name: "dall2-server"
         build: ./server
         ports:
-            - "8080:8080"
+            - "8000:8080"
     dall2-front:
-        container_name: "dall2_front"
+        container_name: "dall2-front"
         build: ./client
         ports:
             - "80:3000"
@@ -15,4 +15,4 @@ services:
         container_name: "dall2-fast-server"
         build: ./fast_server
         ports:
-            - "8000:8000"
+            - "8888:8000"

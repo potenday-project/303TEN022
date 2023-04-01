@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-    dall2-server:
+    dall2-go-server:
         container_name: "dall2-server"
         build: ./server
         ports:
@@ -11,3 +11,8 @@ services:
         build: ./client
         ports:
             - "80:3000"
+    dall2-fast-server:
+        container_name: "dall2-fast-server"
+        build: ./fast_server
+        ports:
+            - "8000:8000"

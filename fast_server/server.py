@@ -2,6 +2,7 @@ from dotenv import dotenv_values
 from fastapi import FastAPI, Body
 from fastapi.responses import JSONResponse
 import openai
+import time
 
 # Set OpenAI API key
 config = dotenv_values("../.env")
@@ -29,6 +30,17 @@ async def dalle_api(prompt: str = Body(..., embed=True)):
         # Return image as binary data
         print(response["data"][0]["url"])
         return response["data"][0]["url"]
+    except Exception as e:
+        return JSONResponse(content={"error": str(e)})
+    
+# Define a test API
+@app.post("/test")
+async def test_api(prompt: str = Body(..., embed=True)):
+    print("Prompt:", prompt)
+    try:
+        time.sleep(3)
+        fake_image = "https://cdn.mos.cms.futurecdn.net/oPDgNkqHzWuJrw5Q5DKmZ4-1920-80.jpg"
+        return fake_image
     except Exception as e:
         return JSONResponse(content={"error": str(e)})
 

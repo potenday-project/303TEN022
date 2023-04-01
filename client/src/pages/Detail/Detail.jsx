@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { DescDiv, ImgDiv, ShareDiv } from "./DetailStyle";
+import { DescDiv, ImgDiv } from "./DetailStyle";
+import { useLocation } from "react-router-dom";
 
 const Detail = () => {
+  const location = useLocation();
+  const { tastePick } = location.state;
   const [imageUrl, setImageUrl] = useState(null);
+
+  // Use the tastePick data here
+  console.log("in detail: ", tastePick.join(" "));
 
   useEffect(() => {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt: 'something string' })
+      body: JSON.stringify({ prompt: tastePick.join(" ") })
     };
     
     fetch("http://localhost:8000/test", requestOptions)

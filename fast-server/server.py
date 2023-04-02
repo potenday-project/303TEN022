@@ -32,14 +32,17 @@ async def dalle_api(prompt: str = Body(..., embed=True)):
     print("Prompt:", prompt)
     try:
         # Generate image using OpenAI API
-        response = openai.Image.create(
-            prompt=prompt,
-            n=1,
-            size="256x256"
-        )
+        # response = openai.Image.create(
+        #     prompt=prompt,
+        #     n=1,
+        #     size="256x256"
+        # )
+        
         # Return image as binary data
-        print(response["data"][0]["url"])
-        return response["data"][0]["url"]
+        # print(response["data"][0]["url"])
+        # return response["data"][0]["url"]
+        
+        return "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/111.png"
     except Exception as e:
         return JSONResponse(content={"error": str(e)})
     

@@ -14,7 +14,7 @@ import Black2 from "../../images/Black2.png";
 const Home = () => {
   return (
     <MainDiv>
-      <h1>천직 찾기 테스트</h1>
+      <h1>나만의 캐릭터 찾기</h1>
       <ImgDiv>
         <div id="sparkleDiv">
           <div>

@@ -47,26 +47,27 @@ const MyTaste = () => {
 
   return (
     <TasteDiv>
-      <h1>나의 성향은 ?</h1>
+      <h1>나의 선택은?</h1>
       <p>최대 5개까지 선택이 가능해요.</p>
       <form onSubmit={onSubmitTaste}>
         <TasteBody>
-          <input type="button" value="space" onClick={onClickBtn} />
-          <input type="button" value="company" onClick={onClickBtn} />
-          <input type="button" value="typescript" onClick={onClickBtn} />
-          <input type="button" value="home" onClick={onClickBtn} />
-          <input type="button" value="work" onClick={onClickBtn} />
-          <input type="button" value="co-working space" onClick={onClickBtn} />
-          <input type="button" value="introvert" onClick={onClickBtn} />
-          <input type="button" value="extrovert" onClick={onClickBtn} />
-          <input type="button" value="exercise" onClick={onClickBtn} />
-          <input type="button" value="e-learing" onClick={onClickBtn} />
-          <input type="button" value="coffee" onClick={onClickBtn} />
-          <input type="button" value="drawing" onClick={onClickBtn} />
-          <input type="button" value="picture" onClick={onClickBtn} />
-          <input type="button" value="tea" onClick={onClickBtn} />
-          <input type="button" value="beer" onClick={onClickBtn} />
-          <input type="button" value="cheese" onClick={onClickBtn} />
+          <input type="button" value="Creative" onClick={onClickBtn} />
+          <input type="button" value="Quiet" onClick={onClickBtn} />
+          <input type="button" value="Outgoing" onClick={onClickBtn} />
+          <input type="button" value="Friendly" onClick={onClickBtn} />
+          <input type="button" value="Practical" onClick={onClickBtn} />
+          <input type="button" value="Talented" onClick={onClickBtn} />
+          <input type="button" value="Supportive" onClick={onClickBtn} />
+          <input type="button" value="Prickly" onClick={onClickBtn} />
+          <input type="button" value="Bossy" onClick={onClickBtn} />
+          <input type="button" value="Capricious" onClick={onClickBtn} />
+          <input type="button" value="Reliable" onClick={onClickBtn} />
+          <input type="button" value="Honest" onClick={onClickBtn} />
+          <input type="button" value="Play" onClick={onClickBtn} />
+          <input type="button" value="Helpful" onClick={onClickBtn} />
+          <input type="button" value="Unfriendly" onClick={onClickBtn} />
+          <input type="button" value="Extraveted" onClick={onClickBtn} />
+          <input type="button" value="Introverted" onClick={onClickBtn} />
         </TasteBody>
         <CompleteBtn type="submit" value="모두 선택했어요 !" />
       </form>

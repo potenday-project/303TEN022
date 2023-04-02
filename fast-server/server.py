@@ -47,7 +47,9 @@ async def dalle_api(prompt: str = Body(..., embed=True)):
                   "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/002.png",
                   "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/003.png",
                   "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/004.png",
-                  "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/005.png"]
+                  "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/005.png",
+                  "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/006.png",
+                  "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/007.png"]
         pick_num = random.randrange(0, len(res_ruls))
         return res_ruls[pick_num]
     except Exception as e:

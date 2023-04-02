@@ -6,8 +6,8 @@ import DALLE1 from "../../images/DALLE1.png";
 const HomeNight = () => {
   return (
     <MainDivNight>
-      <h1>천직 찾기 테스트</h1>
-      <p id="titleDesc">수 많은 기업 중에 나랑 딱 맞는 기업찾기</p>
+      <h1>나만의 캐릭터 찾기</h1>
+      <p id="titleDesc">나랑 딱 맞는 캐릭터 찾기</p>
       <ImgDivNight>
         <img src={DALLE1} alt="main-img" />
       </ImgDivNight>

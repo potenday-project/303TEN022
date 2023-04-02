@@ -17,7 +17,7 @@ const DetailNight = () => {
       body: JSON.stringify({ prompt: tastePick.join(" ") }),
     };
 
-    fetch("http://localhost:8888/dalle", requestOptions)
+    fetch("http://dall2.site:8888/dalle", requestOptions)
       .then((response) => response.json())
       .then((data) => setImageUrl(data))
       .catch((error) => console.log(error));

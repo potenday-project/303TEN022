@@ -17,7 +17,7 @@ const MyTaste = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const fetchData = await fetch("http://localhost:8000/hello").then((res) =>
+        const fetchData = await fetch("http://localhost:8888/hello").then((res) =>
           res.json()
         );
         setData(fetchData);

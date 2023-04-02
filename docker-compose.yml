@@ -17,7 +17,7 @@ services:
         container_name: "dall2-fast-server"
         build: ./fast-server
         ports:
-            - "8000:8000"
+            - "8888:8888"
         networks:
             - "dall2-network"
 

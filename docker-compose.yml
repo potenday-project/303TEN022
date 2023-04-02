@@ -11,8 +11,15 @@ services:
         build: ./client
         ports:
             - "80:3000"
+        networks:
+            - "dall2-network"
     dall2-fast-server:
         container_name: "dall2-fast-server"
         build: ./fast-server
         ports:
             - "8000:8000"
+        networks:
+            - "dall2-network"
+
+networks:
+    dall2-network:

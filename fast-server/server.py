@@ -4,6 +4,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 import openai
 import time
+import random
 
 # Set OpenAI API key
 config = dotenv_values(".env")
@@ -41,8 +42,14 @@ async def dalle_api(prompt: str = Body(..., embed=True)):
         # Return image as binary data
         # print(response["data"][0]["url"])
         # return response["data"][0]["url"]
-        
-        return "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/111.png"
+        time.sleep(3)
+        res_ruls=["https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/001.png",
+                  "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/002.png",
+                  "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/003.png",
+                  "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/004.png",
+                  "https://raw.githubusercontent.com/potenday-project/303TEN022/main/fast-server/images/005.png"]
+        pick_num = random.randrange(0, len(res_ruls))
+        return res_ruls[pick_num]
     except Exception as e:
         return JSONResponse(content={"error": str(e)})
     
